@@ -1,0 +1,17 @@
+<h2>Lista de Tarefas (Total: {{ contar() }})</h2>
+
+<div #container></div>
+
+<ng-template #tarefaTemplate let-tarefa="tarefa">
+  <div>
+    <span>
+      {{ tarefa.titulo }} -
+      {{ tarefa.concluida ? 'Concluída' : 'Pendente' }}
+    </span>
+    <button (click)="concluir(tarefa.id)">Concluir</button>
+    <button (click)="remover(tarefa.id)">Remover</button>
+  </div>
+</ng-template>
+
+<br />
+<button (click)="irParaCadastro()">Voltar ao Cadastro</button>
